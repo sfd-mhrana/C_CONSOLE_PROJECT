@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Book class to represent books
+// Book class to represent books (Model Class)
 class Book
 {
 public:
@@ -22,7 +22,7 @@ public:
     }
 };
 
-// Library class to manage books
+// Library class to manage books (Controller Class)
 class Library
 {
 private:
@@ -87,20 +87,6 @@ public:
         cout << "Book with ID " << id << " is not available." << endl;
     }
 
-    // Return a book
-    void returnBook(int id)
-    {
-        for (auto &book : books)
-        {
-            if (book.id == id && !book.isAvailable)
-            {
-                book.isAvailable = true;
-                cout << "Book with ID " << id << " is returned successfully." << endl;
-                return;
-            }
-        }
-        cout << "Invalid book ID or the book is already available." << endl;
-    }
 };
 
 int main()
@@ -155,18 +141,13 @@ int main()
             library.deleteBook(bookId);
             break;
         case 5:
-            cout << "Enter the ID of the book you want to return: ";
-            cin >> bookId;
-            library.returnBook(bookId);
-            break;
-        case 6:
             cout << "Exiting the program. Thank you!\n";
             break;
         default:
             cout << "Invalid choice. Please try again.\n";
             break;
         }
-    } while (choice != 7);
+    } while (choice != 5);
 
     return 0;
 }

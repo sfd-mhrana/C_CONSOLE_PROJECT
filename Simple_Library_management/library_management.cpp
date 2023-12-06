@@ -104,8 +104,7 @@ int main()
         cout << "2. Add a book\n";
         cout << "3. Edit a book\n";
         cout << "4. Delete a book\n";
-        cout << "5. Return a book\n";
-        cout << "6. Exit\n";
+        cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -147,7 +146,8 @@ int main()
             cout << "Invalid choice. Please try again.\n";
             break;
         }
-    } while (choice != 5);
+    }
+    while (choice != 5);
 
     return 0;
 }
